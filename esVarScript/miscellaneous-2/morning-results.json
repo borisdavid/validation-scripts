@@ -1,0 +1,2202 @@
+{
+    "results": {
+        "main": {
+            "CVA": {
+                "value": 0.028382538789408773,
+                "status": "Success"
+            },
+            "NPV": {
+                "value": 1.0937853247192035,
+                "status": "Success"
+            },
+            "notionalNPV": {
+                "value": 1.0937853247192035,
+                "status": "Success"
+            },
+            "theta": {
+                "value": 0.0002818210611683636,
+                "status": "Success"
+            }
+        },
+        "probabilities": {
+            "autocallOnNextObservation": {
+                "bc562b4d-3452-46ed-a1fc-fb20878e3495": {
+                    "value": 0,
+                    "status": "Success"
+                }
+            },
+            "barrierHit": {
+                "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                    "value": 0.09339999999999997,
+                    "status": "Success"
+                },
+                "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                    "value": 0.09240000000000013,
+                    "status": "Success"
+                },
+                "bc562b4d-3452-46ed-a1fc-fb20878e3495": {
+                    "value": 0.28139999999999904,
+                    "status": "Success"
+                },
+                "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                    "value": 0.13060000000000033,
+                    "status": "Success"
+                },
+                "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                    "value": 0.08959999999999972,
+                    "status": "Success"
+                }
+            },
+            "expectedTimeToMaturity": {
+                "bc562b4d-3452-46ed-a1fc-fb20878e3495": {
+                    "value": 3.561544109589039,
+                    "status": "Success"
+                }
+            },
+            "noAutocall": {
+                "bc562b4d-3452-46ed-a1fc-fb20878e3495": {
+                    "value": 0.9996,
+                    "status": "Success"
+                }
+            }
+        },
+        "sensitivities": {
+            "CS01": {
+                "87b4fec3-8e66-4b92-9e53-56b746f4ce0c": {
+                    "value": -0.0003367178533517645,
+                    "status": "Success"
+                }
+            },
+            "DV01": {
+                "EUR": {
+                    "value": -0.000019426542388067958,
+                    "status": "Success"
+                },
+                "GBP": {
+                    "value": -0.000021927483547568016,
+                    "status": "Success"
+                },
+                "JPY": {
+                    "value": -0.000044879311573708947,
+                    "status": "Success"
+                },
+                "USD": {
+                    "value": 0.00030856555870584224,
+                    "status": "Success"
+                }
+            },
+            "convexity": {
+                "EUR": {
+                    "value": 5.130699022082297,
+                    "status": "Success"
+                },
+                "GBP": {
+                    "value": -8.622114472167652,
+                    "status": "Success"
+                },
+                "JPY": {
+                    "value": -1.2943853793245808,
+                    "status": "Success"
+                },
+                "USD": {
+                    "value": -0.26553202925327923,
+                    "status": "Success"
+                }
+            },
+            "delta": {
+                "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                    "value": 0.000013636900305819199,
+                    "status": "Success"
+                },
+                "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                    "value": 0.000010265315720941104,
+                    "status": "Success"
+                },
+                "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                    "value": 0.000003944019627627776,
+                    "status": "Success"
+                },
+                "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                    "value": 0.00001731256346660241,
+                    "status": "Success"
+                }
+            },
+            "gamma": {
+                "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                    "value": 4.573972806586218e-9,
+                    "status": "Success"
+                },
+                "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                    "value": -1.414833949484727e-8,
+                    "status": "Success"
+                },
+                "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                    "value": -7.864863119682704e-10,
+                    "status": "Success"
+                },
+                "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                    "value": -7.880479151434136e-9,
+                    "status": "Success"
+                }
+            },
+            "rho": {
+                "EUR": {
+                    "value": 0.18995193017967704,
+                    "status": "Success"
+                },
+                "GBP": {
+                    "value": 0.2169014257261681,
+                    "status": "Success"
+                },
+                "JPY": {
+                    "value": 0.40486828968477884,
+                    "status": "Success"
+                },
+                "USD": {
+                    "value": -3.118391183867364,
+                    "status": "Success"
+                }
+            },
+            "vega": {
+                "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                    "value": -0.2371388762630211,
+                    "status": "Success"
+                },
+                "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                    "value": -0.28271865626070536,
+                    "status": "Success"
+                },
+                "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                    "value": -0.4778199845498321,
+                    "status": "Success"
+                },
+                "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                    "value": -0.31225556798881726,
+                    "status": "Success"
+                }
+            }
+        },
+        "scenarios": {
+            "6500": {
+                "value": 1.1259061392113416,
+                "status": "Success"
+            },
+            "6501": {
+                "value": 1.1294507545235566,
+                "status": "Success"
+            },
+            "6502": {
+                "value": 1.1219786766147621,
+                "status": "Success"
+            },
+            "6503": {
+                "value": 1.1120017266145497,
+                "status": "Success"
+            },
+            "6504": {
+                "value": 1.1202075295219427,
+                "status": "Success"
+            },
+            "6505": {
+                "value": 1.1045182538098572,
+                "status": "Success"
+            },
+            "6506": {
+                "value": 1.1280062133029276,
+                "status": "Success"
+            },
+            "6507": {
+                "value": 1.136936357634662,
+                "status": "Success"
+            },
+            "6508": {
+                "value": 1.1239160849139775,
+                "status": "Success"
+            },
+            "6509": {
+                "value": 1.138225453488066,
+                "status": "Success"
+            },
+            "6510": {
+                "value": 1.1250693922034085,
+                "status": "Success"
+            },
+            "6511": {
+                "value": 1.1339795806579334,
+                "status": "Success"
+            },
+            "6512": {
+                "value": 1.1375749468609335,
+                "status": "Success"
+            },
+            "6513": {
+                "value": 1.1105895671975525,
+                "status": "Success"
+            },
+            "6514": {
+                "value": 1.130300510156042,
+                "status": "Success"
+            },
+            "6515": {
+                "value": 1.130462499582259,
+                "status": "Success"
+            },
+            "6516": {
+                "value": 1.1244247495313273,
+                "status": "Success"
+            },
+            "6517": {
+                "value": 1.123021165097646,
+                "status": "Success"
+            },
+            "6518": {
+                "value": 1.133312221409505,
+                "status": "Success"
+            },
+            "6519": {
+                "value": 1.1591635015991757,
+                "status": "Success"
+            },
+            "6520": {
+                "value": 1.1330992260326314,
+                "status": "Success"
+            },
+            "6521": {
+                "value": 1.1288272297270394,
+                "status": "Success"
+            },
+            "6522": {
+                "value": 1.0909281535631714,
+                "status": "Success"
+            },
+            "6523": {
+                "value": 1.1139745579579365,
+                "status": "Success"
+            },
+            "6524": {
+                "value": 1.119630155653555,
+                "status": "Success"
+            },
+            "6525": {
+                "value": 1.1212937688425202,
+                "status": "Success"
+            },
+            "6526": {
+                "value": 1.1128937385900661,
+                "status": "Success"
+            },
+            "6527": {
+                "value": 1.1511178493163396,
+                "status": "Success"
+            },
+            "6528": {
+                "value": 1.1197816000246907,
+                "status": "Success"
+            },
+            "6529": {
+                "value": 1.1408173988908574,
+                "status": "Success"
+            },
+            "6530": {
+                "value": 1.1446226373883426,
+                "status": "Success"
+            },
+            "6531": {
+                "value": 1.1343071985376336,
+                "status": "Success"
+            },
+            "6532": {
+                "value": 1.1190134013404565,
+                "status": "Success"
+            },
+            "6533": {
+                "value": 1.1369265874590357,
+                "status": "Success"
+            },
+            "6534": {
+                "value": 1.1284675601787852,
+                "status": "Success"
+            },
+            "6535": {
+                "value": 1.1326076913476926,
+                "status": "Success"
+            },
+            "6536": {
+                "value": 1.130115884579099,
+                "status": "Success"
+            },
+            "6537": {
+                "value": 1.1250826038268538,
+                "status": "Success"
+            },
+            "6538": {
+                "value": 1.1375468539063212,
+                "status": "Success"
+            },
+            "6539": {
+                "value": 1.1074278714280712,
+                "status": "Success"
+            },
+            "6540": {
+                "value": 1.1653650409341592,
+                "status": "Success"
+            },
+            "6541": {
+                "value": 1.1303119720614814,
+                "status": "Success"
+            },
+            "6542": {
+                "value": 1.1199707908002259,
+                "status": "Success"
+            },
+            "6543": {
+                "value": 1.1119600687291806,
+                "status": "Success"
+            },
+            "6544": {
+                "value": 1.1323734869979032,
+                "status": "Success"
+            },
+            "6545": {
+                "value": 1.129270269471263,
+                "status": "Success"
+            },
+            "6546": {
+                "value": 1.111857102539437,
+                "status": "Success"
+            },
+            "6547": {
+                "value": 1.1542604119612465,
+                "status": "Success"
+            },
+            "6548": {
+                "value": 1.1221973636815878,
+                "status": "Success"
+            },
+            "6549": {
+                "value": 1.141801052122422,
+                "status": "Success"
+            },
+            "6550": {
+                "value": 1.1305210656187736,
+                "status": "Success"
+            },
+            "6551": {
+                "value": 1.120928774794705,
+                "status": "Success"
+            },
+            "6552": {
+                "value": 1.131586186053779,
+                "status": "Success"
+            },
+            "6553": {
+                "value": 1.1076468099955161,
+                "status": "Success"
+            },
+            "6554": {
+                "value": 1.1123796401660477,
+                "status": "Success"
+            },
+            "6555": {
+                "value": 1.129592827244505,
+                "status": "Success"
+            },
+            "6556": {
+                "value": 1.1303787216698373,
+                "status": "Success"
+            },
+            "6557": {
+                "value": 1.1324764255092283,
+                "status": "Success"
+            },
+            "6558": {
+                "value": 1.1036499545032614,
+                "status": "Success"
+            },
+            "6559": {
+                "value": 1.114546311891476,
+                "status": "Success"
+            },
+            "6560": {
+                "value": 1.1080164088106093,
+                "status": "Success"
+            },
+            "6561": {
+                "value": 1.0961766577910004,
+                "status": "Success"
+            },
+            "6562": {
+                "value": 1.1295233700216207,
+                "status": "Success"
+            },
+            "6563": {
+                "value": 1.1105766385061937,
+                "status": "Success"
+            },
+            "6564": {
+                "value": 1.131436032080855,
+                "status": "Success"
+            },
+            "6565": {
+                "value": 1.1415226635770812,
+                "status": "Success"
+            },
+            "6566": {
+                "value": 1.1268620155069264,
+                "status": "Success"
+            },
+            "6567": {
+                "value": 1.1132546630925733,
+                "status": "Success"
+            },
+            "6568": {
+                "value": 1.1376291062130068,
+                "status": "Success"
+            },
+            "6569": {
+                "value": 1.0985340193053827,
+                "status": "Success"
+            },
+            "6570": {
+                "value": 1.08537459379901,
+                "status": "Success"
+            },
+            "6571": {
+                "value": 1.1050568632200504,
+                "status": "Success"
+            },
+            "6572": {
+                "value": 1.1316952568387801,
+                "status": "Success"
+            },
+            "6573": {
+                "value": 1.1216587685758392,
+                "status": "Success"
+            },
+            "6574": {
+                "value": 1.1185358063449728,
+                "status": "Success"
+            },
+            "6575": {
+                "value": 1.1107059437872084,
+                "status": "Success"
+            },
+            "6576": {
+                "value": 1.1226974987500673,
+                "status": "Success"
+            },
+            "6577": {
+                "value": 1.1368877138957612,
+                "status": "Success"
+            },
+            "6578": {
+                "value": 1.0925411189635241,
+                "status": "Success"
+            },
+            "6579": {
+                "value": 1.1063326599223757,
+                "status": "Success"
+            },
+            "6580": {
+                "value": 1.1081468600685478,
+                "status": "Success"
+            },
+            "6581": {
+                "value": 1.1272672045808738,
+                "status": "Success"
+            },
+            "6582": {
+                "value": 1.1182522776723562,
+                "status": "Success"
+            },
+            "6583": {
+                "value": 1.1164946137636287,
+                "status": "Success"
+            },
+            "6584": {
+                "value": 1.1379020644099496,
+                "status": "Success"
+            },
+            "6585": {
+                "value": 1.119585544358891,
+                "status": "Success"
+            },
+            "6586": {
+                "value": 1.1285473343682895,
+                "status": "Success"
+            },
+            "6587": {
+                "value": 1.1100848667714156,
+                "status": "Success"
+            },
+            "6588": {
+                "value": 1.1357229820909596,
+                "status": "Success"
+            },
+            "6589": {
+                "value": 1.1147959012416688,
+                "status": "Success"
+            },
+            "6590": {
+                "value": 1.117908025580823,
+                "status": "Success"
+            },
+            "6591": {
+                "value": 1.126996600409489,
+                "status": "Success"
+            },
+            "6592": {
+                "value": 1.1268630141077176,
+                "status": "Success"
+            },
+            "6593": {
+                "value": 1.133676652692861,
+                "status": "Success"
+            },
+            "6594": {
+                "value": 1.1329464850375488,
+                "status": "Success"
+            },
+            "6595": {
+                "value": 1.1502127989174262,
+                "status": "Success"
+            },
+            "6596": {
+                "value": 1.129488660035643,
+                "status": "Success"
+            },
+            "6597": {
+                "value": 1.0851792370274442,
+                "status": "Success"
+            },
+            "6598": {
+                "value": 1.1123560762225948,
+                "status": "Success"
+            },
+            "6599": {
+                "value": 1.1491365730568068,
+                "status": "Success"
+            },
+            "6600": {
+                "value": 1.1247464280049815,
+                "status": "Success"
+            },
+            "6601": {
+                "value": 1.117076543553158,
+                "status": "Success"
+            },
+            "6602": {
+                "value": 1.1271140979838403,
+                "status": "Success"
+            },
+            "6603": {
+                "value": 1.1259163371449077,
+                "status": "Success"
+            },
+            "6604": {
+                "value": 1.1014997760412526,
+                "status": "Success"
+            },
+            "6605": {
+                "value": 1.1161820802732527,
+                "status": "Success"
+            },
+            "6606": {
+                "value": 1.1033435088052717,
+                "status": "Success"
+            },
+            "6607": {
+                "value": 1.112108027537258,
+                "status": "Success"
+            },
+            "6608": {
+                "value": 1.1222362526921927,
+                "status": "Success"
+            },
+            "6609": {
+                "value": 1.1178017322433087,
+                "status": "Success"
+            },
+            "6610": {
+                "value": 1.133124920617823,
+                "status": "Success"
+            },
+            "6611": {
+                "value": 1.1296885896965883,
+                "status": "Success"
+            },
+            "6612": {
+                "value": 1.1490943809251473,
+                "status": "Success"
+            },
+            "6613": {
+                "value": 1.104426546565354,
+                "status": "Success"
+            },
+            "6614": {
+                "value": 1.06870707443424,
+                "status": "Success"
+            },
+            "6615": {
+                "value": 1.1210037021653942,
+                "status": "Success"
+            },
+            "6616": {
+                "value": 1.1296469129720483,
+                "status": "Success"
+            },
+            "6617": {
+                "value": 1.136669487809124,
+                "status": "Success"
+            },
+            "6618": {
+                "value": 1.1070446087322474,
+                "status": "Success"
+            },
+            "6619": {
+                "value": 1.1320308734888558,
+                "status": "Success"
+            },
+            "6620": {
+                "value": 1.1311754063342023,
+                "status": "Success"
+            },
+            "6621": {
+                "value": 1.1193995638599323,
+                "status": "Success"
+            },
+            "6622": {
+                "value": 1.1246700965623777,
+                "status": "Success"
+            },
+            "6623": {
+                "value": 1.102105161113598,
+                "status": "Success"
+            },
+            "6624": {
+                "value": 1.127014819675714,
+                "status": "Success"
+            },
+            "6625": {
+                "value": 1.1287654401205072,
+                "status": "Success"
+            },
+            "6626": {
+                "value": 1.1350196781665023,
+                "status": "Success"
+            },
+            "6627": {
+                "value": 1.1140851256432251,
+                "status": "Success"
+            },
+            "6628": {
+                "value": 1.1468752543906882,
+                "status": "Success"
+            },
+            "6629": {
+                "value": 1.1443867066072908,
+                "status": "Success"
+            },
+            "6630": {
+                "value": 1.1312692109091307,
+                "status": "Success"
+            },
+            "6631": {
+                "value": 1.1423250534429372,
+                "status": "Success"
+            },
+            "6632": {
+                "value": 1.1221964612776743,
+                "status": "Success"
+            },
+            "6633": {
+                "value": 1.0597322959671913,
+                "status": "Success"
+            },
+            "6634": {
+                "value": 1.1171079263263892,
+                "status": "Success"
+            },
+            "6635": {
+                "value": 1.1227210460693748,
+                "status": "Success"
+            },
+            "6636": {
+                "value": 1.1208690221258473,
+                "status": "Success"
+            },
+            "6637": {
+                "value": 1.1241379428259726,
+                "status": "Success"
+            },
+            "6638": {
+                "value": 1.108493122211323,
+                "status": "Success"
+            },
+            "6639": {
+                "value": 1.1302956973324274,
+                "status": "Success"
+            },
+            "6640": {
+                "value": 1.1150032703010866,
+                "status": "Success"
+            },
+            "6641": {
+                "value": 1.1331179731527539,
+                "status": "Success"
+            },
+            "6642": {
+                "value": 1.1135956831193996,
+                "status": "Success"
+            },
+            "6643": {
+                "value": 1.1101556413189313,
+                "status": "Success"
+            },
+            "6644": {
+                "value": 1.128972416471621,
+                "status": "Success"
+            },
+            "6645": {
+                "value": 1.1264202955453855,
+                "status": "Success"
+            },
+            "6646": {
+                "value": 1.1280325555694852,
+                "status": "Success"
+            },
+            "6647": {
+                "value": 1.1208732930289362,
+                "status": "Success"
+            },
+            "6648": {
+                "value": 1.137668146939753,
+                "status": "Success"
+            },
+            "6649": {
+                "value": 1.127907491244601,
+                "status": "Success"
+            },
+            "6650": {
+                "value": 1.1131021352673247,
+                "status": "Success"
+            },
+            "6651": {
+                "value": 1.1370130615079723,
+                "status": "Success"
+            },
+            "6652": {
+                "value": 1.1122777515283686,
+                "status": "Success"
+            },
+            "6653": {
+                "value": 1.1343059671352633,
+                "status": "Success"
+            },
+            "6654": {
+                "value": 1.0966226141816116,
+                "status": "Success"
+            },
+            "6655": {
+                "value": 1.1315941055711918,
+                "status": "Success"
+            },
+            "6656": {
+                "value": 1.1202001526385277,
+                "status": "Success"
+            },
+            "6657": {
+                "value": 1.1037352832375977,
+                "status": "Success"
+            },
+            "6658": {
+                "value": 1.1379300343624394,
+                "status": "Success"
+            },
+            "6659": {
+                "value": 1.1053368630325136,
+                "status": "Success"
+            },
+            "6660": {
+                "value": 1.1483346955206706,
+                "status": "Success"
+            },
+            "6661": {
+                "value": 1.1215056313978957,
+                "status": "Success"
+            },
+            "6662": {
+                "value": 1.1278466780068341,
+                "status": "Success"
+            },
+            "6663": {
+                "value": 1.1094653132551986,
+                "status": "Success"
+            },
+            "6664": {
+                "value": 1.0966009316676681,
+                "status": "Success"
+            },
+            "6665": {
+                "value": 1.12321486247862,
+                "status": "Success"
+            },
+            "6666": {
+                "value": 1.1276208475552938,
+                "status": "Success"
+            },
+            "6667": {
+                "value": 1.1221422245630055,
+                "status": "Success"
+            },
+            "6668": {
+                "value": 1.1088613925039017,
+                "status": "Success"
+            },
+            "6669": {
+                "value": 1.119546110087918,
+                "status": "Success"
+            },
+            "6670": {
+                "value": 1.1220522554308021,
+                "status": "Success"
+            },
+            "6671": {
+                "value": 1.1299510777396913,
+                "status": "Success"
+            },
+            "6672": {
+                "value": 1.1175280745896017,
+                "status": "Success"
+            },
+            "6673": {
+                "value": 1.1319910446424197,
+                "status": "Success"
+            },
+            "6674": {
+                "value": 1.1407286633110258,
+                "status": "Success"
+            },
+            "6675": {
+                "value": 1.1253377890212624,
+                "status": "Success"
+            },
+            "6676": {
+                "value": 1.119033413170891,
+                "status": "Success"
+            },
+            "6677": {
+                "value": 1.1108309640758944,
+                "status": "Success"
+            },
+            "6678": {
+                "value": 1.1357681061474203,
+                "status": "Success"
+            },
+            "6679": {
+                "value": 1.134161851036647,
+                "status": "Success"
+            },
+            "6680": {
+                "value": 1.1392049249021212,
+                "status": "Success"
+            },
+            "6681": {
+                "value": 1.113429080817677,
+                "status": "Success"
+            },
+            "6682": {
+                "value": 1.1325818094031488,
+                "status": "Success"
+            },
+            "6683": {
+                "value": 1.1137968131336684,
+                "status": "Success"
+            },
+            "6684": {
+                "value": 1.1137915644146839,
+                "status": "Success"
+            },
+            "6685": {
+                "value": 1.1417537740154389,
+                "status": "Success"
+            },
+            "6686": {
+                "value": 1.1374310788007467,
+                "status": "Success"
+            },
+            "6687": {
+                "value": 1.1237395821036718,
+                "status": "Success"
+            },
+            "6688": {
+                "value": 1.1395286738814632,
+                "status": "Success"
+            },
+            "6689": {
+                "value": 1.1254875183749276,
+                "status": "Success"
+            },
+            "6690": {
+                "value": 1.1319487641488402,
+                "status": "Success"
+            },
+            "6691": {
+                "value": 1.1189375884446087,
+                "status": "Success"
+            },
+            "6692": {
+                "value": 1.1163190936820122,
+                "status": "Success"
+            },
+            "6693": {
+                "value": 1.1286347326994763,
+                "status": "Success"
+            },
+            "6694": {
+                "value": 1.1394994938615355,
+                "status": "Success"
+            },
+            "6695": {
+                "value": 1.1299477960768232,
+                "status": "Success"
+            },
+            "6696": {
+                "value": 1.128392984947627,
+                "status": "Success"
+            },
+            "6697": {
+                "value": 1.1179377246529412,
+                "status": "Success"
+            },
+            "6698": {
+                "value": 1.1168258778393754,
+                "status": "Success"
+            },
+            "6699": {
+                "value": 1.1050829645551663,
+                "status": "Success"
+            },
+            "6700": {
+                "value": 1.1397949721265275,
+                "status": "Success"
+            },
+            "6701": {
+                "value": 1.1372018569973465,
+                "status": "Success"
+            },
+            "6702": {
+                "value": 1.1360681011026972,
+                "status": "Success"
+            },
+            "6703": {
+                "value": 1.1325622430401954,
+                "status": "Success"
+            },
+            "6704": {
+                "value": 1.1242210328804625,
+                "status": "Success"
+            },
+            "6705": {
+                "value": 1.1257756228519014,
+                "status": "Success"
+            },
+            "6706": {
+                "value": 1.1139676600383726,
+                "status": "Success"
+            },
+            "6707": {
+                "value": 1.1279890751190675,
+                "status": "Success"
+            },
+            "6708": {
+                "value": 1.1392645772977983,
+                "status": "Success"
+            },
+            "6709": {
+                "value": 1.148182303111838,
+                "status": "Success"
+            },
+            "6710": {
+                "value": 1.1089986016453701,
+                "status": "Success"
+            },
+            "6711": {
+                "value": 1.107881483937549,
+                "status": "Success"
+            },
+            "6712": {
+                "value": 1.147116960748317,
+                "status": "Success"
+            },
+            "6713": {
+                "value": 1.1085296875716466,
+                "status": "Success"
+            },
+            "6714": {
+                "value": 1.1085346001175496,
+                "status": "Success"
+            },
+            "6715": {
+                "value": 1.0663175064104775,
+                "status": "Success"
+            },
+            "6716": {
+                "value": 1.1158454870967118,
+                "status": "Success"
+            },
+            "6717": {
+                "value": 1.1174177718410805,
+                "status": "Success"
+            },
+            "6718": {
+                "value": 1.149329372918386,
+                "status": "Success"
+            },
+            "6719": {
+                "value": 1.1287085695686376,
+                "status": "Success"
+            },
+            "6720": {
+                "value": 1.1131574441852798,
+                "status": "Success"
+            },
+            "6721": {
+                "value": 1.1291869254071836,
+                "status": "Success"
+            },
+            "6722": {
+                "value": 1.1320657110805903,
+                "status": "Success"
+            },
+            "6723": {
+                "value": 1.121071680107225,
+                "status": "Success"
+            },
+            "6724": {
+                "value": 1.1151871304826437,
+                "status": "Success"
+            },
+            "6725": {
+                "value": 1.1258133702921522,
+                "status": "Success"
+            },
+            "6726": {
+                "value": 1.1321874247732269,
+                "status": "Success"
+            },
+            "6727": {
+                "value": 1.1003348196931009,
+                "status": "Success"
+            },
+            "6728": {
+                "value": 1.131889596220539,
+                "status": "Success"
+            },
+            "6729": {
+                "value": 1.1065492325013058,
+                "status": "Success"
+            },
+            "6730": {
+                "value": 1.1043622588804758,
+                "status": "Success"
+            },
+            "6731": {
+                "value": 1.1258056718790788,
+                "status": "Success"
+            },
+            "6732": {
+                "value": 1.1292072718055404,
+                "status": "Success"
+            },
+            "6733": {
+                "value": 1.1277654329578461,
+                "status": "Success"
+            },
+            "6734": {
+                "value": 1.123128834433442,
+                "status": "Success"
+            },
+            "6735": {
+                "value": 1.111100444389397,
+                "status": "Success"
+            },
+            "6736": {
+                "value": 1.1149007983018107,
+                "status": "Success"
+            },
+            "6737": {
+                "value": 1.123333436701359,
+                "status": "Success"
+            },
+            "6738": {
+                "value": 1.1191678827298834,
+                "status": "Success"
+            },
+            "6739": {
+                "value": 1.1289303197287281,
+                "status": "Success"
+            },
+            "6740": {
+                "value": 1.1256589430888244,
+                "status": "Success"
+            },
+            "6741": {
+                "value": 1.1072446015998636,
+                "status": "Success"
+            },
+            "6742": {
+                "value": 1.093358681438918,
+                "status": "Success"
+            },
+            "6743": {
+                "value": 1.1312868775613583,
+                "status": "Success"
+            },
+            "6744": {
+                "value": 1.1481104017214325,
+                "status": "Success"
+            },
+            "6745": {
+                "value": 1.1353940724271712,
+                "status": "Success"
+            },
+            "6746": {
+                "value": 1.1185902163837058,
+                "status": "Success"
+            },
+            "6747": {
+                "value": 1.1251282266919609,
+                "status": "Success"
+            },
+            "6748": {
+                "value": 1.1244128197511314,
+                "status": "Success"
+            },
+            "6749": {
+                "value": 1.133343675630899,
+                "status": "Success"
+            },
+            "6750": {
+                "value": 1.1331198983612014,
+                "status": "Success"
+            },
+            "6751": {
+                "value": 1.121421200178688,
+                "status": "Success"
+            },
+            "6752": {
+                "value": 1.1201424911886808,
+                "status": "Success"
+            },
+            "6753": {
+                "value": 1.1031055337760804,
+                "status": "Success"
+            },
+            "6754": {
+                "value": 1.1312786478964112,
+                "status": "Success"
+            },
+            "6755": {
+                "value": 1.1361412348550135,
+                "status": "Success"
+            },
+            "6756": {
+                "value": 1.1169684067348264,
+                "status": "Success"
+            },
+            "6757": {
+                "value": 1.10472393723594,
+                "status": "Success"
+            },
+            "6758": {
+                "value": 1.144884501612861,
+                "status": "Success"
+            },
+            "6759": {
+                "value": 1.1345452435798975,
+                "status": "Success"
+            },
+            "6760": {
+                "value": 1.121699713218464,
+                "status": "Success"
+            },
+            "6761": {
+                "value": 1.136649573758116,
+                "status": "Success"
+            },
+            "6762": {
+                "value": 1.1643554802990108,
+                "status": "Success"
+            },
+            "6763": {
+                "value": 1.1189870500870818,
+                "status": "Success"
+            },
+            "6764": {
+                "value": 1.1324514410950324,
+                "status": "Success"
+            },
+            "6765": {
+                "value": 1.1380196413748647,
+                "status": "Success"
+            },
+            "6766": {
+                "value": 1.1180694560238083,
+                "status": "Success"
+            },
+            "6767": {
+                "value": 1.1184231374095528,
+                "status": "Success"
+            },
+            "6768": {
+                "value": 1.1245752968771079,
+                "status": "Success"
+            },
+            "6769": {
+                "value": 1.1238058478426909,
+                "status": "Success"
+            },
+            "6770": {
+                "value": 1.1077894973304416,
+                "status": "Success"
+            },
+            "6771": {
+                "value": 1.1316010261643392,
+                "status": "Success"
+            },
+            "6772": {
+                "value": 1.1159364195817156,
+                "status": "Success"
+            },
+            "6773": {
+                "value": 1.1223360241112537,
+                "status": "Success"
+            },
+            "6774": {
+                "value": 1.1247721625001688,
+                "status": "Success"
+            },
+            "6775": {
+                "value": 1.0875037836480963,
+                "status": "Success"
+            },
+            "6776": {
+                "value": 1.1117711715812288,
+                "status": "Success"
+            },
+            "6777": {
+                "value": 1.094839726636266,
+                "status": "Success"
+            },
+            "6778": {
+                "value": 1.0949499978656956,
+                "status": "Success"
+            },
+            "6779": {
+                "value": 1.1309386872804008,
+                "status": "Success"
+            },
+            "6780": {
+                "value": 1.1520151545098212,
+                "status": "Success"
+            },
+            "6781": {
+                "value": 1.118681078906765,
+                "status": "Success"
+            },
+            "6782": {
+                "value": 1.1243766413424263,
+                "status": "Success"
+            },
+            "6783": {
+                "value": 1.1150403795391501,
+                "status": "Success"
+            },
+            "6784": {
+                "value": 1.1395525378956894,
+                "status": "Success"
+            },
+            "6785": {
+                "value": 1.1313945844300266,
+                "status": "Success"
+            },
+            "6786": {
+                "value": 1.110025537401302,
+                "status": "Success"
+            },
+            "6787": {
+                "value": 1.1104170550869679,
+                "status": "Success"
+            },
+            "6788": {
+                "value": 1.1505570638509126,
+                "status": "Success"
+            },
+            "6789": {
+                "value": 1.1405509865311958,
+                "status": "Success"
+            },
+            "6790": {
+                "value": 1.126212533460729,
+                "status": "Success"
+            },
+            "6791": {
+                "value": 1.12123155457139,
+                "status": "Success"
+            },
+            "6792": {
+                "value": 1.127844329897552,
+                "status": "Success"
+            },
+            "6793": {
+                "value": 1.129980515358494,
+                "status": "Success"
+            },
+            "6794": {
+                "value": 1.1370853943758037,
+                "status": "Success"
+            },
+            "6795": {
+                "value": 1.139282952430381,
+                "status": "Success"
+            },
+            "6796": {
+                "value": 1.1221985021544614,
+                "status": "Success"
+            },
+            "6797": {
+                "value": 1.1246027730639825,
+                "status": "Success"
+            },
+            "6798": {
+                "value": 1.1157549202875217,
+                "status": "Success"
+            },
+            "6799": {
+                "value": 1.1325930443079253,
+                "status": "Success"
+            },
+            "6800": {
+                "value": 1.1437729797651282,
+                "status": "Success"
+            },
+            "6801": {
+                "value": 1.116923621030701,
+                "status": "Success"
+            },
+            "6802": {
+                "value": 1.11612411428596,
+                "status": "Success"
+            },
+            "6803": {
+                "value": 1.1560558226624855,
+                "status": "Success"
+            },
+            "6804": {
+                "value": 1.111028006874373,
+                "status": "Success"
+            },
+            "6805": {
+                "value": 1.1411732114927104,
+                "status": "Success"
+            },
+            "6806": {
+                "value": 1.1232346736405152,
+                "status": "Success"
+            },
+            "6807": {
+                "value": 1.1300259664305752,
+                "status": "Success"
+            },
+            "6808": {
+                "value": 1.1057014584657021,
+                "status": "Success"
+            },
+            "6809": {
+                "value": 1.1127037407576277,
+                "status": "Success"
+            },
+            "6810": {
+                "value": 1.1267112437643296,
+                "status": "Success"
+            },
+            "6811": {
+                "value": 1.121628076427747,
+                "status": "Success"
+            },
+            "6812": {
+                "value": 1.1016457810507003,
+                "status": "Success"
+            },
+            "6813": {
+                "value": 1.1484485881235071,
+                "status": "Success"
+            },
+            "6814": {
+                "value": 1.1364574050167424,
+                "status": "Success"
+            },
+            "6815": {
+                "value": 1.1424929965915966,
+                "status": "Success"
+            },
+            "6816": {
+                "value": 1.1263616309787383,
+                "status": "Success"
+            },
+            "6817": {
+                "value": 1.147056135215802,
+                "status": "Success"
+            },
+            "6818": {
+                "value": 1.1139744351720335,
+                "status": "Success"
+            },
+            "6819": {
+                "value": 1.1116893995883965,
+                "status": "Success"
+            },
+            "6820": {
+                "value": 1.1351431965806527,
+                "status": "Success"
+            },
+            "6821": {
+                "value": 1.1264132893852032,
+                "status": "Success"
+            },
+            "6822": {
+                "value": 1.1101451051306845,
+                "status": "Success"
+            },
+            "6823": {
+                "value": 1.105137746543518,
+                "status": "Success"
+            },
+            "6824": {
+                "value": 1.132421946841144,
+                "status": "Success"
+            },
+            "6825": {
+                "value": 1.103913670709788,
+                "status": "Success"
+            },
+            "6826": {
+                "value": 1.123833636894884,
+                "status": "Success"
+            },
+            "6827": {
+                "value": 1.1093298656041817,
+                "status": "Success"
+            },
+            "6828": {
+                "value": 1.122489096707658,
+                "status": "Success"
+            },
+            "6829": {
+                "value": 1.120404649138561,
+                "status": "Success"
+            },
+            "6830": {
+                "value": 1.1096976012565405,
+                "status": "Success"
+            },
+            "6831": {
+                "value": 1.146307797642558,
+                "status": "Success"
+            },
+            "6832": {
+                "value": 1.098025978014983,
+                "status": "Success"
+            },
+            "6833": {
+                "value": 1.1088339331732011,
+                "status": "Success"
+            },
+            "6834": {
+                "value": 1.1470556419069093,
+                "status": "Success"
+            },
+            "6835": {
+                "value": 1.1316342112921562,
+                "status": "Success"
+            },
+            "6836": {
+                "value": 1.0965544400253564,
+                "status": "Success"
+            },
+            "6837": {
+                "value": 1.0955793711396153,
+                "status": "Success"
+            },
+            "6838": {
+                "value": 1.095744669112978,
+                "status": "Success"
+            },
+            "6839": {
+                "value": 1.1084031421760832,
+                "status": "Success"
+            },
+            "6840": {
+                "value": 1.1205427123956133,
+                "status": "Success"
+            },
+            "6841": {
+                "value": 1.1258045669741896,
+                "status": "Success"
+            },
+            "6842": {
+                "value": 1.125620004616782,
+                "status": "Success"
+            },
+            "6843": {
+                "value": 1.119037625744641,
+                "status": "Success"
+            },
+            "6844": {
+                "value": 1.074137307767845,
+                "status": "Success"
+            },
+            "6845": {
+                "value": 1.073218692730448,
+                "status": "Success"
+            },
+            "6846": {
+                "value": 1.1272897829867274,
+                "status": "Success"
+            },
+            "6847": {
+                "value": 1.1252565907311645,
+                "status": "Success"
+            },
+            "6848": {
+                "value": 1.1139877476768514,
+                "status": "Success"
+            },
+            "6849": {
+                "value": 1.134117198627488,
+                "status": "Success"
+            },
+            "6850": {
+                "value": 1.1126461941913663,
+                "status": "Success"
+            },
+            "6851": {
+                "value": 1.1305887239658048,
+                "status": "Success"
+            },
+            "6852": {
+                "value": 1.1409753043079436,
+                "status": "Success"
+            },
+            "6853": {
+                "value": 1.0980634766437645,
+                "status": "Success"
+            },
+            "6854": {
+                "value": 1.117334418050186,
+                "status": "Success"
+            },
+            "6855": {
+                "value": 1.137429737292839,
+                "status": "Success"
+            },
+            "6856": {
+                "value": 1.0397196901987158,
+                "status": "Success"
+            },
+            "6857": {
+                "value": 1.102446211734003,
+                "status": "Success"
+            },
+            "6858": {
+                "value": 1.1339973862571402,
+                "status": "Success"
+            },
+            "6859": {
+                "value": 1.1216313337091501,
+                "status": "Success"
+            },
+            "6860": {
+                "value": 1.1183786976658638,
+                "status": "Success"
+            },
+            "6861": {
+                "value": 1.1004194688805977,
+                "status": "Success"
+            },
+            "6862": {
+                "value": 1.1193798821154637,
+                "status": "Success"
+            },
+            "6863": {
+                "value": 1.1280954151833957,
+                "status": "Success"
+            },
+            "6864": {
+                "value": 1.1229799582380358,
+                "status": "Success"
+            },
+            "6865": {
+                "value": 1.122673891671067,
+                "status": "Success"
+            },
+            "6866": {
+                "value": 1.1387414534802096,
+                "status": "Success"
+            },
+            "6867": {
+                "value": 1.130564699834288,
+                "status": "Success"
+            },
+            "6868": {
+                "value": 1.1084079774903588,
+                "status": "Success"
+            },
+            "6869": {
+                "value": 1.1270334295491715,
+                "status": "Success"
+            },
+            "6870": {
+                "value": 1.1126641630923695,
+                "status": "Success"
+            },
+            "6871": {
+                "value": 1.1363570208882414,
+                "status": "Success"
+            },
+            "6872": {
+                "value": 1.1033447473715805,
+                "status": "Success"
+            },
+            "6873": {
+                "value": 1.137519346293754,
+                "status": "Success"
+            },
+            "6874": {
+                "value": 1.1320536796768912,
+                "status": "Success"
+            },
+            "6875": {
+                "value": 1.0860509894351524,
+                "status": "Success"
+            },
+            "6876": {
+                "value": 1.1313682238806333,
+                "status": "Success"
+            },
+            "6877": {
+                "value": 1.130308222205573,
+                "status": "Success"
+            },
+            "6878": {
+                "value": 1.1453968649370618,
+                "status": "Success"
+            },
+            "6879": {
+                "value": 1.137931126051699,
+                "status": "Success"
+            },
+            "6880": {
+                "value": 1.1219369171368887,
+                "status": "Success"
+            },
+            "6881": {
+                "value": 1.118901836378909,
+                "status": "Success"
+            },
+            "6882": {
+                "value": 1.1473527303198876,
+                "status": "Success"
+            },
+            "6883": {
+                "value": 1.161801210188547,
+                "status": "Success"
+            },
+            "6884": {
+                "value": 1.1142546722521185,
+                "status": "Success"
+            },
+            "6885": {
+                "value": 1.1194351947908219,
+                "status": "Success"
+            },
+            "6886": {
+                "value": 1.123665248331139,
+                "status": "Success"
+            },
+            "6887": {
+                "value": 1.1311737044675239,
+                "status": "Success"
+            },
+            "6888": {
+                "value": 1.1221043586627841,
+                "status": "Success"
+            },
+            "6889": {
+                "value": 1.1255880841349413,
+                "status": "Success"
+            },
+            "6890": {
+                "value": 1.1154106734500078,
+                "status": "Success"
+            },
+            "6891": {
+                "value": 1.1365159078730849,
+                "status": "Success"
+            },
+            "6892": {
+                "value": 1.1200670815004237,
+                "status": "Success"
+            },
+            "6893": {
+                "value": 1.1205324535049304,
+                "status": "Success"
+            },
+            "6894": {
+                "value": 1.1034969734571753,
+                "status": "Success"
+            },
+            "6895": {
+                "value": 1.1184857339957492,
+                "status": "Success"
+            },
+            "6896": {
+                "value": 1.1290026310610064,
+                "status": "Success"
+            },
+            "6897": {
+                "value": 1.1371418666889597,
+                "status": "Success"
+            },
+            "6898": {
+                "value": 1.1232675624135602,
+                "status": "Success"
+            },
+            "6899": {
+                "value": 1.1383307664623084,
+                "status": "Success"
+            },
+            "6900": {
+                "value": 1.1241471180666605,
+                "status": "Success"
+            },
+            "6901": {
+                "value": 1.1307623938015843,
+                "status": "Success"
+            },
+            "6902": {
+                "value": 1.120149588355554,
+                "status": "Success"
+            },
+            "6903": {
+                "value": 1.138262904502598,
+                "status": "Success"
+            },
+            "6904": {
+                "value": 1.1476150874736144,
+                "status": "Success"
+            },
+            "6905": {
+                "value": 1.1265256729415167,
+                "status": "Success"
+            },
+            "6906": {
+                "value": 1.126346641937337,
+                "status": "Success"
+            },
+            "6907": {
+                "value": 1.112830891086236,
+                "status": "Success"
+            },
+            "6908": {
+                "value": 1.1058712191680653,
+                "status": "Success"
+            },
+            "6909": {
+                "value": 1.147385143035633,
+                "status": "Success"
+            },
+            "6910": {
+                "value": 1.1117225211852648,
+                "status": "Success"
+            },
+            "6911": {
+                "value": 1.029385245070156,
+                "status": "Success"
+            },
+            "6912": {
+                "value": 1.0543418279982175,
+                "status": "Success"
+            },
+            "6913": {
+                "value": 1.1130376752147675,
+                "status": "Success"
+            },
+            "6914": {
+                "value": 1.1208101796650554,
+                "status": "Success"
+            },
+            "6915": {
+                "value": 1.13400007922942,
+                "status": "Success"
+            },
+            "6916": {
+                "value": 1.1112117082376176,
+                "status": "Success"
+            },
+            "6917": {
+                "value": 1.1368064448998902,
+                "status": "Success"
+            },
+            "6918": {
+                "value": 1.1270906269063499,
+                "status": "Success"
+            },
+            "6919": {
+                "value": 1.1097819825285833,
+                "status": "Success"
+            },
+            "6920": {
+                "value": 1.1138369065479448,
+                "status": "Success"
+            },
+            "6921": {
+                "value": 1.1271306194497672,
+                "status": "Success"
+            },
+            "6922": {
+                "value": 1.1300590335198804,
+                "status": "Success"
+            },
+            "6923": {
+                "value": 1.1286153745231677,
+                "status": "Success"
+            },
+            "6924": {
+                "value": 1.1299140928562021,
+                "status": "Success"
+            },
+            "6925": {
+                "value": 1.139547941363526,
+                "status": "Success"
+            },
+            "6926": {
+                "value": 1.1220198279982223,
+                "status": "Success"
+            },
+            "6927": {
+                "value": 1.138623814471324,
+                "status": "Success"
+            },
+            "6928": {
+                "value": 1.1168761892079577,
+                "status": "Success"
+            },
+            "6929": {
+                "value": 1.1219229120626752,
+                "status": "Success"
+            },
+            "6930": {
+                "value": 1.110070050533245,
+                "status": "Success"
+            },
+            "6931": {
+                "value": 1.140473468074702,
+                "status": "Success"
+            },
+            "6932": {
+                "value": 1.1182223167823173,
+                "status": "Success"
+            },
+            "6933": {
+                "value": 1.1210930694784131,
+                "status": "Success"
+            },
+            "6934": {
+                "value": 1.1241625658967382,
+                "status": "Success"
+            },
+            "6935": {
+                "value": 1.1333431028223875,
+                "status": "Success"
+            },
+            "6936": {
+                "value": 1.0968474296629616,
+                "status": "Success"
+            },
+            "6937": {
+                "value": 1.1149536475297293,
+                "status": "Success"
+            },
+            "6938": {
+                "value": 1.1017956429803437,
+                "status": "Success"
+            },
+            "6939": {
+                "value": 1.1481863631346956,
+                "status": "Success"
+            },
+            "6940": {
+                "value": 1.1316143915946069,
+                "status": "Success"
+            },
+            "6941": {
+                "value": 1.1212734249668557,
+                "status": "Success"
+            },
+            "6942": {
+                "value": 1.097966114512441,
+                "status": "Success"
+            },
+            "6943": {
+                "value": 1.1204970096700577,
+                "status": "Success"
+            },
+            "6944": {
+                "value": 1.1103617839293856,
+                "status": "Success"
+            },
+            "6945": {
+                "value": 1.139139904153074,
+                "status": "Success"
+            },
+            "6946": {
+                "value": 1.1137495813417635,
+                "status": "Success"
+            },
+            "6947": {
+                "value": 1.0932746184099953,
+                "status": "Success"
+            },
+            "6948": {
+                "value": 1.1130919509766632,
+                "status": "Success"
+            },
+            "6949": {
+                "value": 1.1362196055096014,
+                "status": "Success"
+            },
+            "6950": {
+                "value": 1.1045260778435142,
+                "status": "Success"
+            },
+            "6951": {
+                "value": 1.1229645524270462,
+                "status": "Success"
+            },
+            "6952": {
+                "value": 1.1305301913840429,
+                "status": "Success"
+            },
+            "6953": {
+                "value": 1.1059113648448455,
+                "status": "Success"
+            },
+            "6954": {
+                "value": 1.132565846059587,
+                "status": "Success"
+            },
+            "6955": {
+                "value": 1.1348568597283002,
+                "status": "Success"
+            },
+            "6956": {
+                "value": 1.1179789999542324,
+                "status": "Success"
+            },
+            "6957": {
+                "value": 1.1193546946856663,
+                "status": "Success"
+            },
+            "6958": {
+                "value": 1.1165846171871205,
+                "status": "Success"
+            },
+            "6959": {
+                "value": 1.1234708362817594,
+                "status": "Success"
+            },
+            "6960": {
+                "value": 1.1107863197358836,
+                "status": "Success"
+            },
+            "6961": {
+                "value": 1.132155775795147,
+                "status": "Success"
+            },
+            "6962": {
+                "value": 1.1100241121184338,
+                "status": "Success"
+            },
+            "6963": {
+                "value": 1.119644272395676,
+                "status": "Success"
+            },
+            "6964": {
+                "value": 1.133940424992353,
+                "status": "Success"
+            },
+            "6965": {
+                "value": 1.1311079920654423,
+                "status": "Success"
+            },
+            "6966": {
+                "value": 1.1259100680115068,
+                "status": "Success"
+            },
+            "6967": {
+                "value": 1.1111684929817178,
+                "status": "Success"
+            },
+            "6968": {
+                "value": 1.1222870154487075,
+                "status": "Success"
+            },
+            "6969": {
+                "value": 1.1318307809302202,
+                "status": "Success"
+            },
+            "6970": {
+                "value": 1.131961257539557,
+                "status": "Success"
+            },
+            "6971": {
+                "value": 1.0918833951200968,
+                "status": "Success"
+            },
+            "6972": {
+                "value": 1.1344543053358986,
+                "status": "Success"
+            },
+            "6973": {
+                "value": 1.1208009807372898,
+                "status": "Success"
+            },
+            "6974": {
+                "value": 1.1130897748906348,
+                "status": "Success"
+            },
+            "6975": {
+                "value": 1.128144417714619,
+                "status": "Success"
+            },
+            "6976": {
+                "value": 1.0992201823951557,
+                "status": "Success"
+            },
+            "6977": {
+                "value": 1.1125632546991624,
+                "status": "Success"
+            },
+            "6978": {
+                "value": 1.104559137843717,
+                "status": "Success"
+            },
+            "6979": {
+                "value": 1.1075171909008816,
+                "status": "Success"
+            },
+            "6980": {
+                "value": 1.0975214257303005,
+                "status": "Success"
+            },
+            "6981": {
+                "value": 1.070398179254407,
+                "status": "Success"
+            },
+            "6982": {
+                "value": 1.096354666068826,
+                "status": "Success"
+            },
+            "6983": {
+                "value": 1.1262597921139057,
+                "status": "Success"
+            },
+            "6984": {
+                "value": 1.0875321427418456,
+                "status": "Success"
+            },
+            "6985": {
+                "value": 1.141989650442805,
+                "status": "Success"
+            },
+            "6986": {
+                "value": 1.165524950341902,
+                "status": "Success"
+            },
+            "6987": {
+                "value": 1.1175123763594121,
+                "status": "Success"
+            },
+            "6988": {
+                "value": 1.077136382641205,
+                "status": "Success"
+            },
+            "6989": {
+                "value": 1.1028548868151125,
+                "status": "Success"
+            },
+            "6990": {
+                "value": 1.0963583605678526,
+                "status": "Success"
+            },
+            "6991": {
+                "value": 1.1213913981463934,
+                "status": "Success"
+            },
+            "6992": {
+                "value": 1.1289332559885963,
+                "status": "Success"
+            },
+            "6993": {
+                "value": 1.123089303663645,
+                "status": "Success"
+            },
+            "6994": {
+                "value": 1.1263893566626393,
+                "status": "Success"
+            },
+            "6995": {
+                "value": 1.126634785584918,
+                "status": "Success"
+            },
+            "6996": {
+                "value": 1.0915246849095428,
+                "status": "Success"
+            },
+            "6997": {
+                "value": 1.1337995810440107,
+                "status": "Success"
+            },
+            "6998": {
+                "value": 1.0775210938816682,
+                "status": "Success"
+            },
+            "6999": {
+                "value": 1.1283978706997562,
+                "status": "Success"
+            }
+        },
+        "underlyingVolatilities": {
+            "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                "value": 0.24419987547183777,
+                "status": "Success"
+            },
+            "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                "value": 0.19584825127537844,
+                "status": "Success"
+            },
+            "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                "value": 0.24331701821908244,
+                "status": "Success"
+            },
+            "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                "value": 0.25039595408614196,
+                "status": "Success"
+            }
+        }
+    },
+    "statusKey": "Success",
+    "error": ""
+}

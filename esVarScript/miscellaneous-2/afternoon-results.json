@@ -1,0 +1,200 @@
+{
+    "results": {
+        "main": {
+            "CVA": {
+                "value": 0.028388300402808264,
+                "status": "Success"
+            },
+            "NPV": {
+                "value": 1.0939958446126585,
+                "status": "Success"
+            },
+            "notionalNPV": {
+                "value": 1.0939958446126585,
+                "status": "Success"
+            },
+            "theta": {
+                "value": 0.00028792044349224,
+                "status": "Success"
+            }
+        },
+        "probabilities": {
+            "autocallOnNextObservation": {
+                "bc562b4d-3452-46ed-a1fc-fb20878e3495": {
+                    "value": 0,
+                    "status": "Success"
+                }
+            },
+            "barrierHit": {
+                "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                    "value": 0.09339999999999997,
+                    "status": "Success"
+                },
+                "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                    "value": 0.09240000000000013,
+                    "status": "Success"
+                },
+                "bc562b4d-3452-46ed-a1fc-fb20878e3495": {
+                    "value": 0.2815999999999998,
+                    "status": "Success"
+                },
+                "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                    "value": 0.13060000000000033,
+                    "status": "Success"
+                },
+                "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                    "value": 0.08979999999999984,
+                    "status": "Success"
+                }
+            },
+            "expectedTimeToMaturity": {
+                "bc562b4d-3452-46ed-a1fc-fb20878e3495": {
+                    "value": 3.561544109589039,
+                    "status": "Success"
+                }
+            },
+            "noAutocall": {
+                "bc562b4d-3452-46ed-a1fc-fb20878e3495": {
+                    "value": 0.9996,
+                    "status": "Success"
+                }
+            }
+        },
+        "sensitivities": {
+            "CS01": {
+                "87b4fec3-8e66-4b92-9e53-56b746f4ce0c": {
+                    "value": -0.00033678615841781223,
+                    "status": "Success"
+                }
+            },
+            "DV01": {
+                "EUR": {
+                    "value": -0.00001943102308299416,
+                    "status": "Success"
+                },
+                "GBP": {
+                    "value": -0.000021932852930506286,
+                    "status": "Success"
+                },
+                "JPY": {
+                    "value": -0.00004488976867267347,
+                    "status": "Success"
+                },
+                "USD": {
+                    "value": 0.0003102647533188563,
+                    "status": "Success"
+                }
+            },
+            "convexity": {
+                "EUR": {
+                    "value": 5.127999902043712,
+                    "status": "Success"
+                },
+                "GBP": {
+                    "value": -8.624200377838065,
+                    "status": "Success"
+                },
+                "JPY": {
+                    "value": -1.2926650141409368,
+                    "status": "Success"
+                },
+                "USD": {
+                    "value": 12.729127729205203,
+                    "status": "Success"
+                }
+            },
+            "delta": {
+                "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                    "value": 0.000013639765364277526,
+                    "status": "Success"
+                },
+                "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                    "value": 0.000010267704204778139,
+                    "status": "Success"
+                },
+                "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                    "value": 0.000003944886919962562,
+                    "status": "Success"
+                },
+                "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                    "value": 0.00001735136914812401,
+                    "status": "Success"
+                }
+            },
+            "gamma": {
+                "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                    "value": 4.564499588924448e-9,
+                    "status": "Success"
+                },
+                "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                    "value": -1.4151283434815984e-8,
+                    "status": "Success"
+                },
+                "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                    "value": -7.866534383377645e-10,
+                    "status": "Success"
+                },
+                "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                    "value": -5.26965373720199e-9,
+                    "status": "Success"
+                }
+            },
+            "rho": {
+                "EUR": {
+                    "value": 0.18999330715063767,
+                    "status": "Success"
+                },
+                "GBP": {
+                    "value": 0.2169522779916777,
+                    "status": "Success"
+                },
+                "JPY": {
+                    "value": 0.40495649500726927,
+                    "status": "Success"
+                },
+                "USD": {
+                    "value": -3.118333349442448,
+                    "status": "Success"
+                }
+            },
+            "vega": {
+                "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                    "value": -0.23718865500379493,
+                    "status": "Success"
+                },
+                "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                    "value": -0.28278270902619695,
+                    "status": "Success"
+                },
+                "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                    "value": -0.4779215954918037,
+                    "status": "Success"
+                },
+                "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                    "value": -0.3117459274047718,
+                    "status": "Success"
+                }
+            }
+        },
+        "underlyingVolatilities": {
+            "57cc677f-7d30-456d-ad8c-b0d4ea233439": {
+                "value": 0.24419987547183777,
+                "status": "Success"
+            },
+            "73bd413d-540c-40d1-980e-6cec3fed0db8": {
+                "value": 0.19584825127537844,
+                "status": "Success"
+            },
+            "e2edd81c-9b95-45d4-bf27-1746c9e50492": {
+                "value": 0.24331701821908244,
+                "status": "Success"
+            },
+            "e4808f35-2a90-4a60-bebe-263c938ac20b": {
+                "value": 0.250367891528595,
+                "status": "Success"
+            }
+        }
+    },
+    "statusKey": "Success",
+    "error": ""
+}

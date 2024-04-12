@@ -1,0 +1,12 @@
+id,d6c7f4ec-dab0-4736-a28e-0ab780c7616d
+input currency,AUD
+quantity,1.000000
+
+snapshot,2023-03-01
+start,2023-03-01
+end,2040-03-01
+output currency,USD
+unit,ABSOLUTE
+
+Date,Amount,Type
+2039-12-18T00:00:00Z,0.676100,PRINCIPAL

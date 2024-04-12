@@ -1,0 +1,12 @@
+id,084bbba6-5129-46e3-95fb-4788e300cbc4
+input currency,USD
+quantity,1.000000
+
+snapshot,2023-03-01
+start,2023-03-01
+end,2040-03-01
+output currency,USD
+unit,ABSOLUTE
+
+Date,Amount,Type
+2026-06-07T00:00:00Z,1.000000,PRINCIPAL
