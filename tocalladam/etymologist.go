@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-const etymologistURL = "http://etymologist.service.consul/description/assets"
+const etymologistURL = "http://etymologist.service.consul/description/assets/"
 
 func etymologist(output []SensitivityOutput) ([]SensitivityOutput, error) {
 	ctx := context.Background()

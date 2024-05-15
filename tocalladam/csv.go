@@ -20,7 +20,7 @@ func outputToCsv(output []SensitivityOutput) error {
 	csvwriter := csv.NewWriter(csvFile)
 	defer csvwriter.Flush()
 
-	if err := csvwriter.Write([]string{"id", "currency", "perpetual", "callable", "rho", "rho-to-call", "rho-to-maturity"}); err != nil {
+	if err := csvwriter.Write([]string{"id", "currency", "perpetual", "callable", "npv", "rho", "rho-to-call", "rho-to-maturity"}); err != nil {
 		return fmt.Errorf("error while writing id: %s", err)
 	}
 
@@ -35,6 +35,7 @@ func outputToCsv(output []SensitivityOutput) error {
 			result.Currency,
 			fmt.Sprintf("%t", result.Perpetual),
 			fmt.Sprintf("%t", result.Callable),
+			fmt.Sprintf("%f", result.NPV),
 			fmt.Sprintf("%f", result.Rho),
 			rhoToCall,
 			fmt.Sprintf("%f", result.RhoToMaturity),
