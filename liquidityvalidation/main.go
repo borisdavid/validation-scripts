@@ -32,21 +32,39 @@ func main() {
 		log.Fatal("Error while calling request", err)
 	}
 
+	// -----------------------------------------
+
 	log.Info("fetch requests in Adam")
 	outputAdam, err := requestAdam(assetIDs)
 	if err != nil {
-		log.Fatal("Error while calling request", err)
+		log.Fatal("Error while calling Adam request", err)
 	}
 
 	log.Info("fetch responses in Eve")
 	outputEve, err := requestEve(outputAdam)
 	if err != nil {
-		log.Fatal("Error while calling request", err)
+		log.Fatal("Error while calling Eve request", err)
 	}
+
+	// -----------------------------------------
+
+	log.Info("fetch requests in Arcanist")
+	outputArcanist, outputArcanistMD, err := requestArcanist(outputMD)
+	if err != nil {
+		log.Fatal("Error while calling Arcanist request", err)
+	}
+
+	log.Info("fetch responses in Recco")
+	outputRecco, err := requestRecco(assetIDs)
+	if err != nil {
+		log.Fatal("Error while calling Recco request", err)
+	}
+
+	// -----------------------------------------
 
 	log.Info("Save results in csv")
 	// Write output csv.
-	err = outputToCsv(outputMD, outputEve)
+	err = outputToCsv(outputMD, outputEve, outputArcanist, outputArcanistMD, outputRecco)
 	if err != nil {
 		log.Fatalf("Error converting results to csv: %v", err)
 	}

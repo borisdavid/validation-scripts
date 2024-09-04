@@ -1,0 +1,29 @@
+{
+    "context": {
+        "measureType": "relative",
+        "confidenceLevel": 0.9,
+        "liquidityAdjusted": true
+    },
+    "scenarios": {
+        "timeHorizon": 30,
+        "type": "historicalInnovations"
+    },
+    "portfolio": {
+        "currency": "local",
+        "amountScheme": "quantity",
+        "positions": [
+            {
+                "asset": "b77140c9-2bb9-4a50-8ec6-ff2eb511e160",
+                "amount": 1,
+                "identifierType": "id",
+                "key": "b77140c9-2bb9-4a50-8ec6-ff2eb511e160"
+            },
+            {
+                "asset": "b77140c9-2bb9-4a50-8ec6-ff2eb511e160",
+                "amount": 1,
+                "identifierType": "Asset",
+                "key": "b77140c9-2bb9-4a50-8ec6-ff2eb511e160"
+            }
+        ]
+    }
+}

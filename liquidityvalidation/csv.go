@@ -8,7 +8,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func outputToCsv(outputMD []liquidityOutput, outputEve map[string]eveOutput) error {
+func outputToCsv(outputMD []liquidityOutput, outputEve map[string]eveOutput, outputArcanist, outputArcanistMD, outputRecco map[string]float64) error {
 	log.Infof("Building output csv")
 
 	csvFile, err := os.Create("output.csv")
@@ -20,19 +20,58 @@ func outputToCsv(outputMD []liquidityOutput, outputEve map[string]eveOutput) err
 	csvwriter := csv.NewWriter(csvFile)
 	defer csvwriter.Flush()
 
-	if err := csvwriter.Write([]string{"id", "horizonMD", "horizonNoVolumes", "horizonVolumes"}); err != nil {
+	if err := csvwriter.Write([]string{"id", "horizonMD", "horizonNoVolumes", "horizonVolumes", "esHistInno30D-Arcanist", "esHistInno30D-ArcanistMD", "esHistInno30D-Recco"}); err != nil {
 		return fmt.Errorf("error while writing id: %s", err)
 	}
 
 	for _, result := range outputMD {
-		eveResult := outputEve[result.id]
+		eveResult, ok := outputEve[result.id]
+		if !ok {
+			err := csvwriter.Write([]string{
+				result.id,
+				fmt.Sprintf("%d", result.horizon),
+				"",
+				"",
+				"",
+				"",
+				"",
+			})
+			if err != nil {
+				return fmt.Errorf("error while writing results: %s", err)
+			}
 
-		err := csvwriter.Write([]string{
+			continue
+		}
+
+		strings := []string{
 			result.id,
 			fmt.Sprintf("%d", result.horizon),
 			fmt.Sprintf("%d", eveResult.HorizonNoTradingVolumes),
 			fmt.Sprintf("%d", eveResult.HorizonTradingVolumes),
-		})
+		}
+
+		arcanistValue, ok := outputArcanist[result.id]
+		if !ok {
+			strings = append(strings, "")
+		} else {
+			strings = append(strings, fmt.Sprintf("%f", arcanistValue))
+		}
+
+		arcanistValueMD, ok := outputArcanistMD[result.id]
+		if !ok {
+			strings = append(strings, "")
+		} else {
+			strings = append(strings, fmt.Sprintf("%f", arcanistValueMD))
+		}
+
+		reccoValue, ok := outputRecco[result.id]
+		if !ok {
+			strings = append(strings, "")
+		} else {
+			strings = append(strings, fmt.Sprintf("%f", reccoValue))
+		}
+
+		err := csvwriter.Write(strings)
 		if err != nil {
 			return fmt.Errorf("error while writing results: %s", err)
 		}
