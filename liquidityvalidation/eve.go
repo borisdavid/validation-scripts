@@ -27,6 +27,9 @@ func requestEve(requests []Request) (map[string]eveOutput, error) {
 	maxNumber := len(requests)
 	for _, request := range requests {
 		baseResponse, err := makeRequestEve(ctx, request.Payload)
+		/* 	file, _ := json.MarshalIndent(request.Payload, "", " ")
+		_ = os.WriteFile(fmt.Sprintf("%s.json", request.ID), file, 0644)
+		*/
 		if err != nil {
 			file, _ := json.MarshalIndent(request.Payload, "", " ")
 			_ = os.WriteFile(fmt.Sprintf("%s.json", request.ID), file, 0644)

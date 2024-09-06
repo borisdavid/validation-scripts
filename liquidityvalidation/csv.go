@@ -20,7 +20,7 @@ func outputToCsv(outputMD []liquidityOutput, outputEve map[string]eveOutput, out
 	csvwriter := csv.NewWriter(csvFile)
 	defer csvwriter.Flush()
 
-	if err := csvwriter.Write([]string{"id", "horizonMD", "horizonNoVolumes", "horizonVolumes", "esHistInno30D-Arcanist", "esHistInno30D-ArcanistMD", "esHistInno30D-Recco"}); err != nil {
+	if err := csvwriter.Write([]string{"id", "marketCap", "horizonPoC", "horizonMD", "horizonNoVolumes", "horizonVolumes", "esHistInno30D-Arcanist", "esHistInno30D-ArcanistMD", "esHistInno30D-Recco"}); err != nil {
 		return fmt.Errorf("error while writing id: %s", err)
 	}
 
@@ -29,6 +29,8 @@ func outputToCsv(outputMD []liquidityOutput, outputEve map[string]eveOutput, out
 		if !ok {
 			err := csvwriter.Write([]string{
 				result.id,
+				"",
+				"",
 				fmt.Sprintf("%d", result.horizon),
 				"",
 				"",
@@ -45,10 +47,25 @@ func outputToCsv(outputMD []liquidityOutput, outputEve map[string]eveOutput, out
 
 		strings := []string{
 			result.id,
+		}
+
+		if result.marketCap != nil {
+			strings = append(strings, fmt.Sprintf("%f", *result.marketCap))
+		} else {
+			strings = append(strings, "")
+		}
+
+		if result.pocHorizon != nil {
+			strings = append(strings, fmt.Sprintf("%d", *result.pocHorizon))
+		} else {
+			strings = append(strings, "")
+		}
+
+		strings = append(strings,
 			fmt.Sprintf("%d", result.horizon),
 			fmt.Sprintf("%d", eveResult.HorizonNoTradingVolumes),
 			fmt.Sprintf("%d", eveResult.HorizonTradingVolumes),
-		}
+		)
 
 		arcanistValue, ok := outputArcanist[result.id]
 		if !ok {
