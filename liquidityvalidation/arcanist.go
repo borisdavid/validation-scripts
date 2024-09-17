@@ -8,6 +8,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 )
 
 type ArcanistRequestInput struct {
@@ -59,7 +60,7 @@ type ArcanistResult struct {
 const (
 	arcanistRequestURL = "http://arcanist-http.service.consul/v6/positions/quantile-risk-measure"
 
-	snapshotArcanist = "2024-09-03T00:30:05Z"
+	snapshotArcanist = "2024-09-12T00:30:05Z"
 	metric           = "ES"
 	metricUnit       = "RELATIVE"
 	metricCurrency   = "local"
@@ -154,7 +155,9 @@ func requestArcanistPartial(ctx context.Context, ids []liquidityOutput, withQELi
 		return nil, fmt.Errorf("could not marshal the liquidity request: %w", err)
 	}
 
-	fmt.Println(string(body))
+	_ = os.WriteFile("aaa/aaa.json", body, 0644)
+
+	// fmt.Println(string(body))
 
 	req, err := http.NewRequestWithContext(ctx, http.MethodPost, arcanistRequestURL, bytes.NewReader(body))
 	if err != nil {

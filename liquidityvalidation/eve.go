@@ -17,7 +17,7 @@ const eveURL = "http://eve-live.service.consul/debug/value"
 type eveOutput struct {
 	ID                      string
 	HorizonNoTradingVolumes int
-	HorizonTradingVolumes   int
+	HorizonTradingVolumes   *int
 }
 
 func requestEve(requests []Request) (map[string]eveOutput, error) {
@@ -50,12 +50,27 @@ func requestEve(requests []Request) (map[string]eveOutput, error) {
 			continue
 		}
 
-		// Update palylod by removing trading volumes.
+		// Update payload by removing trading volumes.
 		payload := request.Payload
 		var payloadMap map[string]any
 		if err := json.Unmarshal(payload, &payloadMap); err != nil {
 			log.Infof("Error while unmarshalling payload: %v", err)
 		}
+
+		if _, ok := payloadMap["tradingVolumes"]; !ok {
+			output[request.ID] = eveOutput{
+				ID:                      request.ID,
+				HorizonNoTradingVolumes: result.Liquidity.Horizon.Value,
+			}
+
+			counter++
+			if counter%100 == 0 {
+				log.Printf("Processed %d/%d bonds (%f%%)", counter, maxNumber, float64(counter)/float64(maxNumber)*100)
+			}
+
+			continue
+		}
+
 		delete(payloadMap, "tradingVolumes")
 		payload, err = json.Marshal(payloadMap)
 		if err != nil {
@@ -85,7 +100,7 @@ func requestEve(requests []Request) (map[string]eveOutput, error) {
 
 		output[request.ID] = eveOutput{
 			ID:                      request.ID,
-			HorizonTradingVolumes:   result.Liquidity.Horizon.Value,
+			HorizonTradingVolumes:   &result.Liquidity.Horizon.Value,
 			HorizonNoTradingVolumes: result2.Liquidity.Horizon.Value,
 		}
 

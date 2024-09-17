@@ -28,7 +28,7 @@ type Request struct {
 
 const (
 	requestURL = "http://adam-http.service.consul/debug/dump/request"
-	snapshot   = "2024-09-06T00:30:05Z"
+	snapshot   = "2024-09-12T00:30:05Z"
 )
 
 func requestAdam(ids []string) ([]Request, error) {

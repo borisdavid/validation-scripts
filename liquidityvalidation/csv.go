@@ -64,8 +64,13 @@ func outputToCsv(outputMD []liquidityOutput, outputEve map[string]eveOutput, out
 		strings = append(strings,
 			fmt.Sprintf("%d", result.horizon),
 			fmt.Sprintf("%d", eveResult.HorizonNoTradingVolumes),
-			fmt.Sprintf("%d", eveResult.HorizonTradingVolumes),
 		)
+
+		if eveResult.HorizonTradingVolumes != nil {
+			strings = append(strings, fmt.Sprintf("%d", *eveResult.HorizonTradingVolumes))
+		} else {
+			strings = append(strings, "")
+		}
 
 		arcanistValue, ok := outputArcanist[result.id]
 		if !ok {
