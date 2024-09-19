@@ -57,8 +57,8 @@ type ReccoStatus struct {
 }
 
 const (
-	reccoUrl = "https://api.dev.edge-lab.ch/recco/v2/risk-measures/es/granularities/positions"
-	token    = "eyJraWQiOiJzZXNhbWUtZWRnZWxhYi1hcGktMTY1NjkzNDkzNSIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJqdGkiOiI2ODI3OThhYS1hOTQ5LTQ1OWMtOTk2OC04Y2E2YTk0ODVlOGMiLCJzdWIiOiJhdXRoMHw2MTcxMGFkZTJjYWVlODAwNzFiOGNkNTQiLCJpc3MiOiJodHRwczovL2ludGVybmFsLWFwaS5kZXYuZWRnZS1sYWIuY2gvc2VzYW1lLyIsImF1ZCI6Imh0dHBzOi8vYXBpLmRldi5lZGdlLWxhYi5jaCIsImlhdCI6MTcyNjIxNDc4MywiZXhwIjoxNzI2MjUwNzgyLCJuYmYiOjE3MjYyMTQ3ODMsImh0dHBzOi8vZWRnZWxhYi5jaC9vcmdhbml6YXRpb24iOiIxMmFjOTIzYi0zMTNkLTRlMDktOWNmNS0wZDQzZTFmNjMwZWMifQ.msIWlRGndp02KG-2qRzEWLlm-YEOJDshUbFmoYdz0l-uS8SmPew9KgjA25MpMqUlDRQjiRdf_pT5SR-LolYZLKhSLUqpfyH094t69NJeEce9Gf7_IF3GUOnx_XWmfPK7QGHZOMU3sPjksgefxOxSK3onuUj-re4zlybLyJeY5XJE9H-by6re-0pj9VsXTuqV1hBVN6jqN8AzjjgCxhqid5FNmRkYWu1I2cHy37lp5y4uO7oAGjfT5zLVmsLFuM2vuJbtTqLm1Dbyr9dN64SbgeKwyJlD8yfUExjlq6SIHcV3-LZrZg4TQbpORFKBtxQTE7TR63rPwNh_hL19R4sbcg"
+	reccoUrl     = "https://api.dev.edge-lab.ch/recco/v2/risk-measures/es/granularities/positions"
+	reccoUrlProd = "https://api.edgelab.ch/recco/v2/risk-measures/es/granularities/positions"
 
 	measureType  = "relative"
 	currency     = "local"
@@ -132,14 +132,24 @@ func requestReccoPartial(ctx context.Context, ids []string) (map[string]float64,
 
 	// fmt.Println(string(body))
 
-	req, err := http.NewRequestWithContext(ctx, http.MethodPost, reccoUrl, bytes.NewReader(body))
+	url := reccoUrl
+	if environment == "PROD" {
+		url = reccoUrlProd
+	}
+
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, url, bytes.NewReader(body))
 	if err != nil {
 		return nil, fmt.Errorf("could not create the request: %w", err)
 	}
 	req.Header.Set("x-internal-service", "validation-script")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("Authorization", "Bearer "+token)
+
+	if environment == "PROD" {
+		req.Header.Set("Authorization", "Bearer "+tokenPROD)
+	} else {
+		req.Header.Set("Authorization", "Bearer "+tokenDEV)
+	}
 
 	client := &http.Client{}
 	res, err := client.Do(req)

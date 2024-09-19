@@ -69,6 +69,9 @@ func requestMarketdata(assetIDs []string) ([]liquidityOutput, error) {
 
 func liquidityHorizon(id string) (int, string, error) {
 	url := fmt.Sprintf("http://marketdata.service.consul/assets/id/%s?view=full", id)
+	if environment == "PROD" {
+		url = fmt.Sprintf("https://api.edgelab.ch/cerberux/assets/id/%s?view=full", id)
+	}
 
 	req, err := http.NewRequestWithContext(context.Background(), http.MethodGet, url, nil)
 	if err != nil {
@@ -77,7 +80,9 @@ func liquidityHorizon(id string) (int, string, error) {
 	req.Header.Set("x-internal-service", "validation")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "application/json")
-	// req.Header.Set("Authorization", "Bearer "+edgelabBearerToken)
+	if environment == "PROD" {
+		req.Header.Set("Authorization", "Bearer "+tokenPROD)
+	}
 
 	client := &http.Client{}
 	res, err := client.Do(req)

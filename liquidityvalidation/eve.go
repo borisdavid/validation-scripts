@@ -12,7 +12,10 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-const eveURL = "http://eve-live.service.consul/debug/value"
+const (
+	eveURL     = "http://eve-live.service.consul/debug/value"
+	eveURLPROD = "https://api.edgelab.ch/eve/debug/value"
+)
 
 type eveOutput struct {
 	ID                      string
@@ -114,13 +117,22 @@ func requestEve(requests []Request) (map[string]eveOutput, error) {
 }
 
 func makeRequestEve(ctx context.Context, body json.RawMessage) (json.RawMessage, error) {
-	req, err := http.NewRequestWithContext(ctx, http.MethodPut, eveURL, bytes.NewReader(body))
+	url := eveURL
+	if environment == "PROD" {
+		url = eveURLPROD
+	}
+
+	req, err := http.NewRequestWithContext(ctx, http.MethodPut, url, bytes.NewReader(body))
 	if err != nil {
 		return nil, fmt.Errorf("could not create the request: %w", err)
 	}
 	req.Header.Set("x-internal-service", "validation")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "application/json")
+
+	if environment == "PROD" {
+		req.Header.Set("Authorization", "Bearer "+tokenPROD)
+	}
 
 	client := &http.Client{}
 	res, err := client.Do(req)

@@ -8,7 +8,6 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"os"
 )
 
 type ArcanistRequestInput struct {
@@ -58,14 +57,14 @@ type ArcanistResult struct {
 }
 
 const (
-	arcanistRequestURL = "http://arcanist-http.service.consul/v6/positions/quantile-risk-measure"
+	arcanistRequestURL     = "http://arcanist-http.service.consul/v6/positions/quantile-risk-measure"
+	arcanistRequestURLPROD = "https://api.edgelab.ch/arcanist/v6/positions/quantile-risk-measure"
 
-	snapshotArcanist = "2024-09-12T00:30:05Z"
-	metric           = "ES"
-	metricUnit       = "RELATIVE"
-	metricCurrency   = "local"
-	confidenceLevel  = 0.9
-	quantityUnit     = "ABSOLUTE"
+	metric          = "ES"
+	metricUnit      = "RELATIVE"
+	metricCurrency  = "local"
+	confidenceLevel = 0.9
+	quantityUnit    = "ABSOLUTE"
 )
 
 func requestArcanist(ids []liquidityOutput) (map[string]float64, map[string]float64, error) {
@@ -131,9 +130,14 @@ func requestArcanistPartial(ctx context.Context, ids []liquidityOutput, withQELi
 		}
 	}
 
+	snapshot := snapshotDEV
+	if environment == "PROD" {
+		snapshot = snapshotPROD
+	}
+
 	input := ArcanistRequestInput{
 		Context: ArcanistContext{
-			Snapshot:        snapshotArcanist,
+			Snapshot:        snapshot,
 			Metric:          metric,
 			MetricUnit:      metricUnit,
 			MetricCurrency:  metricCurrency,
@@ -155,17 +159,24 @@ func requestArcanistPartial(ctx context.Context, ids []liquidityOutput, withQELi
 		return nil, fmt.Errorf("could not marshal the liquidity request: %w", err)
 	}
 
-	_ = os.WriteFile("aaa/aaa.json", body, 0644)
+	// _ = os.WriteFile("aaa/aaa.json", body, 0644)
 
-	// fmt.Println(string(body))
+	url := arcanistRequestURL
+	if environment == "PROD" {
+		url = arcanistRequestURLPROD
+	}
 
-	req, err := http.NewRequestWithContext(ctx, http.MethodPost, arcanistRequestURL, bytes.NewReader(body))
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, url, bytes.NewReader(body))
 	if err != nil {
 		return nil, fmt.Errorf("could not create the request: %w", err)
 	}
 	req.Header.Set("x-internal-service", "validation")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "application/json")
+
+	if environment == "PROD" {
+		req.Header.Set("Authorization", "Bearer "+tokenPROD)
+	}
 
 	client := &http.Client{}
 	res, err := client.Do(req)

@@ -27,8 +27,8 @@ type Request struct {
 }
 
 const (
-	requestURL = "http://adam-http.service.consul/debug/dump/request"
-	snapshot   = "2024-09-12T00:30:05Z"
+	requestURL     = "http://adam-http.service.consul/debug/dump/request"
+	requestURLPROD = "https://api.edgelab.ch/adam/debug/dump/request"
 )
 
 func requestAdam(ids []string) ([]Request, error) {
@@ -37,6 +37,12 @@ func requestAdam(ids []string) ([]Request, error) {
 
 	counter := 0
 	maxNumber := len(ids)
+
+	snapshot := snapshotDEV
+	if environment == "PROD" {
+		snapshot = snapshotPROD
+	}
+
 	for _, id := range ids {
 		input := RequestInput{
 			Run: RunDate{
@@ -52,13 +58,22 @@ func requestAdam(ids []string) ([]Request, error) {
 			return nil, fmt.Errorf("could not marshal the yield request: %w", err)
 		}
 
-		req, err := http.NewRequestWithContext(ctx, http.MethodPost, requestURL, bytes.NewReader(body))
+		url := requestURL
+		if environment == "PROD" {
+			url = requestURLPROD
+		}
+
+		req, err := http.NewRequestWithContext(ctx, http.MethodPost, url, bytes.NewReader(body))
 		if err != nil {
 			return nil, fmt.Errorf("could not create the request: %w", err)
 		}
 		req.Header.Set("x-internal-service", "validation")
 		req.Header.Set("Content-Type", "application/json")
 		req.Header.Set("Accept", "application/json")
+
+		if environment == "PROD" {
+			req.Header.Set("Authorization", "Bearer "+tokenPROD)
+		}
 
 		client := &http.Client{}
 		res, err := client.Do(req)
