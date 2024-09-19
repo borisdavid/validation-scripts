@@ -10,12 +10,20 @@ import (
 )
 
 const (
-	jsonPath = "./20240211-result.json"
+	jsonPath         = "./20240702-result.json"
+	lowerScenarioID  = 6500
+	higherScenarioID = 7000
 )
 
 type PricingResult struct {
 	ResultsMap Results `json:"results"`
 }
+
+/*
+	type PricingResult struct {
+		ResultsMap Results `json:"results"`
+	}
+*/
 
 type Results struct {
 	Main      MainResult                `json:"main"`
@@ -49,14 +57,15 @@ func main() {
 	fmt.Println("---------------------")
 
 	var results PricingResult
+	// var results Results
 
 	err = json.Unmarshal(content, &results)
 	if err != nil {
 		log.Fatal("Error during Unmarshal(): ", err)
 	}
 
-	// scenarioValues := results.ResultsMap.Scenarios
 	scenarioValues := results.ResultsMap.Scenarios
+	// scenarioValues := results.Scenarios
 	maxScenarioValue := math.Inf(-1)
 	maxScenarioID := uint32(0)
 
@@ -64,7 +73,7 @@ func main() {
 	maxScenarioID2 := uint32(0)
 
 	for scenarioId, scenarioResult := range scenarioValues {
-		if scenarioId < 6500 || scenarioId > 7000 {
+		if scenarioId < lowerScenarioID || scenarioId > higherScenarioID {
 			continue
 		}
 
@@ -99,7 +108,7 @@ func main() {
 	minScenarioID2 := uint32(0)
 
 	for scenarioId, scenarioResult := range scenarioValues {
-		if scenarioId < 6500 || scenarioId > 7000 {
+		if scenarioId < lowerScenarioID || scenarioId > higherScenarioID {
 			continue
 		}
 
@@ -128,7 +137,7 @@ func main() {
 	// -----------------------------
 	scenarios := make([]ScenarioResult, 0, len(scenarioValues))
 	for scenarioId, scenarioResult := range scenarioValues {
-		if scenarioId < 6500 || scenarioId > 7000 {
+		if scenarioId < lowerScenarioID || scenarioId > higherScenarioID {
 			continue
 		}
 		scenarioResult.id = scenarioId
@@ -160,10 +169,19 @@ func main() {
 		es += (scenario.Value) / float64(nbScenarios)
 	}
 
-	// es -= results.ResultsMap.Main.NPV
 	v := lowScenarios[len(lowScenarios)-1].Value/results.ResultsMap.Main.NPV.Value - 1
 	es = es/results.ResultsMap.Main.NPV.Value - 1
 
+	// v := lowScenarios[len(lowScenarios)-1].Value/results.Main.NPV.Value - 1
+	// es = es/results.Main.NPV.Value - 1
+	vol := 0.0
+	for _, scenario := range scenarios {
+		vol += math.Pow(scenario.Value-results.ResultsMap.Main.NPV.Value, 2)
+		// vol += math.Pow(scenario.Value-results.Main.NPV.Value, 2)
+	}
+	vol = math.Sqrt(vol / float64(len(scenarios)))
+
 	fmt.Println("VaR: ", v)
 	fmt.Println("ES: ", es)
+	fmt.Println("Vol: ", vol)
 }
