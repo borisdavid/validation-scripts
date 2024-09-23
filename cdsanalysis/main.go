@@ -33,8 +33,6 @@ func main() {
 		log.Fatal("Error while fetching credit curves", err)
 	}
 
-	// log.Infof("credit curves : %v", creditCurves)
-
 	// Save in CSV format.
 	err = outputToCsv("./output/", creditCurves)
 	if err != nil {

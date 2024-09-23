@@ -22,7 +22,7 @@ func outputToCsv(outputFolder string, creditCurves map[string]CreditCurve) error
 		csvwriter := csv.NewWriter(csvFile)
 		defer csvwriter.Flush()
 
-		if err := csvwriter.Write(append([]string{"id"}, tenors...)); err != nil {
+		if err := csvwriter.Write(append([]string{"date"}, tenors...)); err != nil {
 			return fmt.Errorf("error while writing id: %s", err)
 		}
 
