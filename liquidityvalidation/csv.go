@@ -20,7 +20,7 @@ func outputToCsv(outputMD []liquidityOutput, outputEve map[string]eveOutput, out
 	csvwriter := csv.NewWriter(csvFile)
 	defer csvwriter.Flush()
 
-	if err := csvwriter.Write([]string{"id", "marketCap", "horizonPoC", "horizonMD", "horizonNoVolumes", "horizonVolumes", "esHistInno30D-Arcanist", "esHistInno30D-ArcanistMD", "esHistInno30D-Recco"}); err != nil {
+	if err := csvwriter.Write([]string{"id", "marketCap", "horizonPoC", "horizonMD", "horizonNoVolumes", "horizonVolumes", "esHistInno30D-ArcanistLiquidity", "esHistInno30D-Arcanist", "esHistInno30D-Recco"}); err != nil {
 		return fmt.Errorf("error while writing id: %s", err)
 	}
 

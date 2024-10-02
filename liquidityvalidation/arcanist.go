@@ -8,6 +8,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 )
 
 type ArcanistRequestInput struct {
@@ -17,14 +18,14 @@ type ArcanistRequestInput struct {
 }
 
 type ArcanistContext struct {
-	Snapshot              string                      `json:"snapshot"`
-	Metric                string                      `json:"metric"`
-	MetricUnit            string                      `json:"metricUnit"`
-	MetricCurrency        string                      `json:"metricCurrency"`
-	ConfidenceLevel       float64                     `json:"confidenceLevel"`
-	Scenarios             map[string]ArcanistScenario `json:"scenarios"`
-	TimeHorizon           TimeHorizon                 `json:"timeHorizon"`
-	FetchLiquidityHorizon bool                        `json:"fetchLiquidityHorizon"`
+	Snapshot        string                      `json:"snapshot"`
+	Metric          string                      `json:"metric"`
+	MetricUnit      string                      `json:"metricUnit"`
+	MetricCurrency  string                      `json:"metricCurrency"`
+	ConfidenceLevel float64                     `json:"confidenceLevel"`
+	Scenarios       map[string]ArcanistScenario `json:"scenarios"`
+	TimeHorizon     TimeHorizon                 `json:"timeHorizon"`
+	RiskType        string                      `json:"riskType"`
 }
 
 type ArcanistScenario struct {
@@ -135,6 +136,11 @@ func requestArcanistPartial(ctx context.Context, ids []liquidityOutput, withQELi
 		snapshot = snapshotPROD
 	}
 
+	riskType := "MARKET"
+	if withQELiquidity {
+		riskType = "MARKET_LIQUIDITY"
+	}
+
 	input := ArcanistRequestInput{
 		Context: ArcanistContext{
 			Snapshot:        snapshot,
@@ -148,7 +154,7 @@ func requestArcanistPartial(ctx context.Context, ids []liquidityOutput, withQELi
 					Value: 30,
 				},
 			},
-			FetchLiquidityHorizon: withQELiquidity,
+			RiskType: riskType,
 		},
 		QuantityUnit: quantityUnit,
 		Positions:    positions,
@@ -159,7 +165,7 @@ func requestArcanistPartial(ctx context.Context, ids []liquidityOutput, withQELi
 		return nil, fmt.Errorf("could not marshal the liquidity request: %w", err)
 	}
 
-	// _ = os.WriteFile("aaa/aaa.json", body, 0644)
+	_ = os.WriteFile("aaa/aaa.json", body, 0644)
 
 	url := arcanistRequestURL
 	if environment == "PROD" {
