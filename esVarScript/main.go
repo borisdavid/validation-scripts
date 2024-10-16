@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	jsonPath         = "./20240702-result.json"
+	jsonPath         = "./dev-result.json"
 	lowerScenarioID  = 6500
 	higherScenarioID = 7000
 )
