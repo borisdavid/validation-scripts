@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"fmt"
 	"os"
 
 	log "github.com/sirupsen/logrus"
@@ -26,6 +27,13 @@ func main() {
 	}
 
 	log.Infof("issuers : %v", issuerIDs)
+
+	// Calibrate termstructures.
+	calibratedCurves, err := calibrateCreditCurves(issuerIDs)
+	if err != nil {
+		log.Fatal("Error while calibrating term structures", err)
+	}
+	fmt.Println(calibratedCurves)
 
 	// Load credit curves from Scalpel directly.
 	creditCurves, err := requestCreditCurves(issuerIDs)
