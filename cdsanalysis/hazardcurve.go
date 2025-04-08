@@ -105,7 +105,6 @@ func survivalProbability(ts TermStructure, yf float64) float64 {
 	return math.Exp(-ts.Value(yf) * yf)
 }
 
-/*
 // LONG-SHORT NELSON-SIEGEL STYLE
 
 const (
@@ -113,7 +112,7 @@ const (
 	longshortNSTransitionTime = 12.0
 )
 
-// Flat term structure.
+// LongShort Nelson-Siegel structure.
 type LongShortNS struct {
 	Shortrate float64
 	Longrate  float64
@@ -132,6 +131,16 @@ func (ts LongShortNS) Value(t float64) float64 {
 
 func (ts LongShortNS) Parameters() []float64 {
 	return []float64{ts.Shortrate, ts.Longrate}
+}
+
+func (ts LongShortNS) Derivative(t float64) float64 {
+	if t == 0.0 {
+		return 0.0
+	}
+
+	tn := t / longshortNSTransitionTime
+
+	return (longshortNSTransitionTime / t * t) * (ts.Shortrate - ts.Longrate) * ((1+tn)*math.Exp(-tn) - 1)
 }
 
 // Parametrized Long-short Nelson-Siegel term structure.
@@ -232,4 +241,3 @@ func solveLinearSystem(a1 float64, b1 float64, c1 float64, a2 float64, b2 float6
 
 	return x, y
 }
-*/

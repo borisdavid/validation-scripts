@@ -3,6 +3,7 @@ package main
 import (
 	"cdsanalysis/integration"
 	"encoding/json"
+	"fmt"
 	"math"
 	"os"
 
@@ -79,6 +80,7 @@ func inputToAsset(cdsInput CDSInput) ([]CDSAsset, error) {
 		}
 
 		firstCouponDate := lastIMMDate(cdsInput.Date)
+		// firstCouponDate := lastIMMDate(cdsInput.Date)
 		nextCouponDate := nextIMMDate(cdsInput.Date)
 		maturity, err := tenor.ShiftDateByTenor(nextIMMDate(cdsInput.Date))
 		if err != nil {
@@ -108,7 +110,7 @@ func inputToAsset(cdsInput CDSInput) ([]CDSAsset, error) {
 			Coupons:      coupons,
 			Date:         cdsInput.Date,
 			RecoveryRate: cdsInput.RecoveryRate,
-			Upfront:      uf,
+			Upfront:      uf / 100.0,
 
 			InterestCurve: &interestCurve,
 		}
@@ -146,6 +148,8 @@ func calibrateCreditCurves(issuers []string) (map[string]map[string]float64, err
 
 func calibrateCreditTermStructure(cdsAssets []CDSAsset) (map[string]float64, error) {
 	e := extractor{configuration: DefaultConfiguration()}
+	// e.configuration.Parametrization = ParametrizedLongShortNS{}
+	e.configuration.Parametrization = ParametrizedLongShortNS{}
 
 	curve, err := e.extractCurve(e.configuration.Parametrization, cdsAssets)
 	if err != nil {
@@ -153,6 +157,7 @@ func calibrateCreditTermStructure(cdsAssets []CDSAsset) (map[string]float64, err
 	}
 
 	curveObj := *curve
+	fmt.Println(curveObj)
 	return map[string]float64{
 		"M12": curveObj.Value(1.0),
 		"Y7":  curveObj.Value(7.0),
@@ -202,9 +207,7 @@ func priceCDS(cds CDSAsset, creditTS TermStructure) float64 {
 	premium := premiumLeg(cds, creditTS)
 	protection := protectionLeg(cds, creditTS)
 
-	// Eventually add accrued interest if needed.
-
-	return premium - protection - cds.Upfront
+	return protection - premium - cds.Upfront
 }
 
 func premiumLeg(cds CDSAsset, creditTS TermStructure) float64 {
